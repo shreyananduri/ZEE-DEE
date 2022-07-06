@@ -4,7 +4,7 @@ class MySqlConn{
         try{  
             Class.forName("com.mysql.cj.jdbc.Driver");  
             Connection conn = DriverManager.getConnection("jdbc:mysql://
-            localhost:3306/databasename","username","password");  
+            localhost:3306/databasename","root","123456");  
             Statement stmt = conn.createStatement();  
             ResultSet rs = stmt.executeQuery("select * from emp");    
             con.close();  

@@ -1,5 +1,11 @@
 package home.controllers;
 
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.model.Entry;
+import com.calendarfx.view.CalendarView;
+import com.calendarfx.view.MonthEntryView;
+import com.calendarfx.view.MonthView;
 import home.model.StudentsModel;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -18,7 +24,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 
-public class TimetableController<CalendarView> implements Initializable {
+public class TimetableController implements Initializable {
 
 
     private CalendarView calendar;
@@ -68,9 +74,6 @@ public class TimetableController<CalendarView> implements Initializable {
             }
         };
 
-
-
-
         updateTimeThread.setPriority(Thread.MIN_PRIORITY);
         updateTimeThread.setDaemon(true);
         updateTimeThread.start();
@@ -78,6 +81,5 @@ public class TimetableController<CalendarView> implements Initializable {
         calendar.showMonthPage();
         pnlHost.getChildren().add(calendar);
     }
-
-
 }
+
